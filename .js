@@ -1,4 +1,5 @@
 function ordenar(numeros) {
+    console.log('Teste')
     return numeros.sort((a, b) => a - b)
 }
 
