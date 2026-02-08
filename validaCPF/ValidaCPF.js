@@ -37,6 +37,6 @@ ValidaCPF.prototype.isSequencia = function() {
     const sequencia = this.cpfLimpo[0].repeat(this.cpfLimpo.length)
     return sequencia === this.cpfLimpo
 }
-const cpf = new ValidaCPF('152.384.726-33')
+const cpf = new ValidaCPF('711.064.010-65')
 console.log(cpf.valida())
 

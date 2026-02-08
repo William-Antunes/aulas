@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(13, 106, 134);
+    font-size: 20px;
+    font-family: sans-serif;
+    line-height: 1.5em
+}
+
+.container {
+    width: 80vw;
+    max-width: 1000px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+form input, form label, form button {
+    display: block;
+    width: 100%;
+    padding: 0,2px 1px;
+}
+
+form button {
+    border: none;
+    background-color: rgb(13, 106, 134);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+
+
+}
+
+form button:hover {
+    background-color: rgb(6, 65, 83);
+    
+}
+
+form input {
+    padding: 10px;
+}
+
+.senha-gerada {
+    font-size: 2em;
+    color: rgb(13, 106, 134);
+    margin: 40px 0;
+}
+
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+}
+
+button {
+    display: block;
+    margin-top: 20px;
+    font-size: 20px;
+}

@@ -1,0 +1,591 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.menu {
+   border-bottom: 1px solid #EEEEEE;
+    position: fixed;
+    z-index: 1;
+    background-color: #E6E6E6;
+    
+    width: 100%;
+    top: 0;
+    padding: 10px;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+section {
+    min-height: 100vh;
+    padding-top: 100px;
+    position: relative;
+}
+#maquinas {
+    background-color: rgb(197, 76, 208);
+    overflow: hidden;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
+    cursor: pointer;
+    margin-top: 10px;
+       
+}
+
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 50px
+}
+.nome {
+    padding-left: 10px;
+    
+}
+ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+ul li {
+    font-size: 20px;
+}
+
+.menu ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: crimson;
+    transition: all 0.3s ease;
+}
+
+.menu ul li a:hover::after {
+    left: 25%;
+    width: 50%;
+}
+
+.menu ul li a {
+    position: relative;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    padding: 0 30px 0 30px;
+}
+
+.box {
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #cfc9c9;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #F5F5F5;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.6s ease-out;
+    margin-bottom: 50px;
+    
+}
+.box.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.grid-nos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+    padding: 0 30px 0 30px;
+    color: white;
+    overflow: hidden;
+}
+
+.grid-nos p {
+    text-align: center;
+    font-size: 25px;
+
+}
+
+.grid-nos h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    margin:0 0 30px 0;
+    color: white;
+}
+
+.grid-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100%
+}
+
+#planos h2 {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+
+.box h3 {
+    font-size: 30px;
+}
+
+.preco {
+    text-decoration: line-through;
+}
+
+.box .exp {
+    background-color: #ffd700;
+    margin: 10px 0 20px 0;
+    cursor: pointer;
+}
+
+.box .exp p {
+    font-weight: bold;
+    padding: 10px 0 10px 0;}
+
+.box .exp:hover {
+    background-color: #e6c200;
+}
+.fa-circle-check {
+    color: #00b352;
+}
+
+.lista-planos {
+    display: block;
+    list-style: none;
+    text-align: left;
+}
+
+.lista-planos li {
+    margin-bottom: 10px;
+}
+.item-bloqueado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #999; /* Cor do texto cinza */
+  text-decoration: line-through; /* Risca o texto */
+  font-family: sans-serif;
+  list-style: none;
+}
+
+.icone-proibido {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #999; /* Cor do círculo */
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+/* A linha diagonal dentro do círculo */
+.icone-proibido::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: #999; /* Cor da linha */
+  transform: translate(-50%, -50%) rotate(-45deg); /* Inclina a linha */
+}
+
+.title-gold {
+    color: #D4AF37; /* Dourado */
+}
+
+.title-platinum {
+    color: #40E0D0; /* Prateado */
+}
+
+.title-diamond {
+    color: #c77dff
+}
+
+
+.fid {
+    margin-bottom: 10px;
+    font-weight: bold
+}
+
+.img {
+    width: 55px;
+    height: 55px;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.menu-escondido {
+    transform: translateY(-100%); /* Move o menu inteiramente para cima */
+    opacity: 0;
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    margin: 15px 0 15px 0;
+}
+
+.nos {
+    background-image: url('img/gym.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.bottom-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: auto;
+    margin-left: 20%;
+}
+
+.esquerda {
+    opacity: 0;
+    transform: translateX(-150px);
+    transition: all 1s ease-out;
+}
+
+.bottom-image {
+    opacity: 0;
+    transform: translateX(150px);
+    transition: all 1s ease-out;
+}
+
+.esquerda.show, .bottom-image.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.but {
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;   
+}
+.but:hover {
+    background-color: darkred;
+}
+
+.p {
+    margin: 10px 0;
+    cursor: pointer;
+}
+.p:hover {
+    text-decoration: underline;
+}
+
+#fotos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 40px 0;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.carrosel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+#prev, #next {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+#prev::before {
+    content: '❮';
+}
+
+#next::before {
+    content: '❯';
+}
+
+#prev:hover, #next:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.carrosel {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.track img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+#fotos h2 {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 40px;
+    color: #333;
+}
+
+.modal-senha {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-senha-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-senha h2 {
+    margin: 10px;
+}
+
+.vermelho {
+    color: crimson;
+    font-family: 'sans-serif';
+    font-size: 14px;
+    margin: 10px;
+}
+
+.modal-conta {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-conta-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-conta-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.modal-conta-content li {
+  padding: 5px;
+  font-size: 15px;
+}
+
+/* Container do input para ancorar a dica */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* O Balão de Dicas */
+.password-hints {
+    position: absolute;
+    left: 105%;
+    top: 0;
+    width: 220px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 100;
+    
+    display: none; /* Esconde instantaneamente */
+}
+
+/* Mostra ao focar no input */
+.password-wrapper:focus-within .password-hints {
+    display: block;
+}
+
+/* Estilo da lista de requisitos */
+.password-hints p {
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.requirement {
+    list-style: none;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* A "Checkbox" (Bolinha cinza) */
+.requirement::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+
+.requirement.valid {
+    color: #27ae60;
+}
+.requirement.valid::before {
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
+
+
+@media (max-width: 600px) {
+    .password-hints {
+        left: 0;
+        top: 100%;
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+.linha {
+    width: 80%;
+    height: 2px;
+    background-color: #080505;
+    margin: 15px 0 30px 0;
+}
+.lin {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.imagem {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.redes h2 {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.redes a {
+    margin: 0 15px 30px 15px;
+}
+
+.rol-content h2 {
+    margin-bottom: 30px;
+}
+
+.linha-2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
