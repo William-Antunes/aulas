@@ -1,0 +1,26 @@
+<%- include('includes/heads') %>
+<%- include('includes/navbar') %>
+<%- include('includes/messages') %>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+      <form method="post" action="/login/register">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div class="form-group my-5">
+          <label for="registerEmail">Email</label>
+          <input type="email" class="form-control" id="registerEmail" name="email">
+        </div>
+        <div class="form-group">
+          <label for="registerPassword">Senha</label>
+          <input type="password" class="form-control" id="registerPassword" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary my-3">Criar conta</button>
+      </form>
+
+      <a href="/login">Já tem conta?</a>
+    </div>
+  </div>
+</div>
+
+<%- include('includes/footer') %>
