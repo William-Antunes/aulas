@@ -1,0 +1,133 @@
+.form {
+	width: min(920px, 100%);
+	margin: 20px auto;
+	padding: 24px;
+	display: grid;
+	gap: 10px;
+	border-radius: 14px;
+	border: 1px solid rgba(99, 133, 173, 0.28);
+	border-left: 5px solid #5ea1d8;
+	background:
+		linear-gradient(160deg, rgba(12, 19, 30, 0.97) 0%, rgba(8, 13, 22, 0.98) 100%);
+	box-shadow:
+		0 20px 42px rgba(0, 0, 0, 0.38),
+		inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.form label {
+	margin-top: 4px;
+	font-size: 0.78rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: #9fb5ce;
+}
+
+.form input,
+.form textarea,
+.form select {
+	width: 100%;
+	box-sizing: border-box;
+	min-height: 46px;
+	padding: 12px 14px;
+	border-radius: 10px;
+	border: 1px solid rgba(94, 161, 216, 0.3);
+	background: rgba(7, 12, 20, 0.88);
+	color: #e7f0fc;
+	font: inherit;
+	transition:
+		border-color 0.2s ease,
+		box-shadow 0.2s ease,
+		background-color 0.2s ease;
+}
+
+.form input::placeholder {
+	color: #7e93ad;
+}
+
+.form textarea {
+	resize: vertical;
+	min-height: 92px;
+	line-height: 1.45;
+}
+
+.form select {
+	appearance: none;
+	background-image:
+		linear-gradient(45deg, transparent 50%, #8ebce0 50%),
+		linear-gradient(135deg, #8ebce0 50%, transparent 50%);
+	background-position:
+		calc(100% - 18px) calc(50% + 1px),
+		calc(100% - 13px) calc(50% + 1px);
+	background-size: 5px 5px, 5px 5px;
+	background-repeat: no-repeat;
+	padding-right: 34px;
+}
+
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+	outline: none;
+	border-color: #5ea1d8;
+	background: rgba(9, 15, 25, 0.98);
+	box-shadow: 0 0 0 3px rgba(94, 161, 216, 0.2);
+}
+
+.form button {
+	justify-self: end;
+	border: none;
+	border-radius: 10px;
+	padding: 12px 22px;
+	font: inherit;
+	font-weight: 800;
+	letter-spacing: 0.02em;
+	color: #0f1016;
+	background: linear-gradient(135deg, #8ab4ff 0%, #c4a1ff 100%);
+	cursor: pointer;
+	transition:
+		transform 0.18s ease,
+		box-shadow 0.18s ease,
+		filter 0.18s ease;
+	box-shadow: 0 10px 24px rgba(138, 180, 255, 0.24);
+}
+
+.form button:hover {
+	transform: translateY(-1px) scale(1.01);
+	filter: brightness(1.03);
+}
+
+.form button:active {
+	transform: translateY(0);
+}
+
+.form button:focus-visible {
+	outline: 2px solid #8ab4ff;
+	outline-offset: 3px;
+}
+
+.form input#task {
+	min-height: 56px;
+	font-size: 1.05rem;
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+
+.form textarea#task {
+	min-height: 120px;
+	font-size: 1.05rem;
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+
+@media (max-width: 640px) {
+	.form {
+		padding: 16px;
+		border-radius: 12px;
+		border-left-width: 3px;
+	}
+
+	.form button {
+		width: 100%;
+		justify-self: center;
+	}
+}

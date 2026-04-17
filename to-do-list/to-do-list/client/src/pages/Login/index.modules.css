@@ -1,0 +1,58 @@
+.login-page {
+	--login-bg-1: #0d121a;
+	--login-bg-2: #101a27;
+	--login-highlight: #6fd3ff;
+	--login-highlight-soft: rgba(111, 211, 255, 0.18);
+	width: 100%;
+	min-height: 100svh;
+	padding: 28px 18px 42px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background:
+		radial-gradient(1100px 500px at 50% -120px, rgba(111, 211, 255, 0.16) 0%, transparent 65%),
+		linear-gradient(180deg, var(--login-bg-2) 0%, var(--login-bg-1) 100%);
+	color: #d8e4f3;
+}
+
+.login-page > * {
+	width: min(1120px, 100%);
+}
+
+.login-page h1 {
+	margin: 22px 0 8px;
+	font-size: clamp(2rem, 4.5vw, 2.6rem);
+	letter-spacing: 0.01em;
+	color: #f3f7ff;
+}
+
+.login-page > a {
+	display: inline-block;
+	margin-top: 16px;
+	color: #94cfff;
+	text-decoration: none;
+	font-weight: 600;
+	transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.login-page > a:hover {
+	color: #c9e9ff;
+	text-shadow: 0 0 14px var(--login-highlight-soft);
+}
+
+.login-page > a:focus-visible {
+	outline: 2px solid var(--login-highlight);
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+	.login-page {
+		padding: 20px 12px 30px;
+	}
+
+	.login-page h1 {
+		margin-top: 14px;
+	}
+}
